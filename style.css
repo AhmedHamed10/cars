@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-transform: capitalize;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body {
+    overflow: hidden;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 9%;
+}
+
+.header .logo {
+    text-decoration: none;
+    font-size: 3rem;
+    font-weight: bolder;
+    color: #000;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+}
+
+
+.header .navbar a {
+    display: inline-block;
+    text-decoration: none;
+    margin: 0 1rem;
+    font-size: 2rem;
+    color: #000;
+    transition: 0.4s ease;
+    opacity: 0;
+    animation: slideTop .5s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+.header .navbar a:hover,
+.header .navbar a.active {
+    color: #1743e3;
+}
+.header .icons {
+    display: flex;
+    justify-content: space-between;
+    width: 9.375rem;
+    height: 2.5rem;
+}
+.header .icons a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: transparent;
+    padding: 1.5rem;
+    margin: 0 .5rem;
+    text-decoration: none;
+    border: .2rem solid transparent;
+    transform: rotate(45deg);
+    transition: 0.4s ease;
+    opacity: 0;
+    animation: slideSci .5s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+.header .icons a:hover{
+    border-color: #ff0000;
+}
+
+.header .icons a i{
+    font-size: 2rem;
+    color: #fff;
+    transform: rotate(-45deg);
+}
+
+.home {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3.125rem 8% 0;
+    overflow: hidden;
+}
+
+.home-content {
+    max-width: 39.4rem;
+}
+
+.home-content h1{
+    font-size: 3.2rem;
+    line-height: 1.2;
+    opacity: 0;
+    animation: slideBottom 1s ease forwards;
+    animation-delay: .5s;
+}
+
+.home-content h3 {
+    font-size: 2.5rem;
+    color: #1743e3;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: 1s;
+}
+
+.home-content p{
+    font-size: 1.2rem;
+    margin: 1rem 0 2rem;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1.3s;
+}
+
+.btn{
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    background: #1743e3;
+    padding: .9rem 2.1rem;
+    border: 2px solid #1743e3;
+    border-radius: 6px;
+    font-size: 1.4rem;
+    transition: 0.5s ease;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 1.7s;
+}
+
+.btn:hover {
+    background: transparent;
+    color: #1743e3;
+}
+
+.home-img {
+    position: relative;
+    right: -7%;
+    width: 28rem;
+    height: 28rem;
+    transform: rotate(45deg);
+}
+
+.home-img .rhombus{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border: 1.5rem solid #1743e3;
+    box-shadow: .9rem .9rem .9rem rgba(0,0,0, .2);
+    opacity: 0;
+    animation: zoomOut 1s ease forwards;
+    animation-delay: 1.3s;
+}
+
+.home-img .rhombus img {
+    position: absolute;
+    top: 8rem;
+    left: -17.4rem;
+    max-width: 50rem;
+    transform: rotate(-45deg);
+    opacity: 0;
+    animation: car 1s ease forwards;
+    animation-delay: 1.6s;
+}
+
+.home .rhombus2 {
+    position: absolute;
+    width: 50rem;
+    height: 50rem;
+    top: -12rem;
+    right: -26rem;
+    z-index: -1;
+    transform: rotate(45deg);
+    background: #1743e3;
+    opacity: 0;
+    animation: rhombus2 1s ease forwards;
+}
+
+@keyframes slideRight{
+    0%{
+        opacity: 0;
+        transform: translateX(-6.2rem);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+        }
+}
+
+@keyframes slideLeft{
+    0%{
+        opacity: 0;
+        transform: translateX(6.2rem);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+        }
+}
+
+@keyframes slideTop {
+    0%{
+        opacity: 0;
+        transform: translateY(6.2rem);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+        }
+}
+
+@keyframes slideBottom {
+    0%{
+        opacity: 0;
+        transform: translateY(-6.2rem);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+        }
+}
+
+@keyframes slideSci{
+    0%{
+        opacity: 0;
+        transform: translateX(6.2rem) rotate(45deg);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0) rotate(45deg);
+        }
+}
+
+@keyframes zoomOut{
+    0%{
+        opacity: 0;
+        transform: scale(1.1);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+        }
+}
+
+@keyframes car {
+    0%{
+        opacity: 0;
+        transform: translate(18.8rem, -18.8rem) scale(0) rotate(-45deg);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0, 0) scale(1) rotate(-45deg);
+        }
+}
+
+
+@keyframes rhombus2 {
+    0%{
+        opacity: 0;
+        right: -40%;
+    }
+    100%{
+        opacity: 1;
+        right: -26rem;
+        }
+}
